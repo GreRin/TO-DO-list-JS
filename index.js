@@ -44,14 +44,17 @@ function createNewTask(title, priority, time, task) {
 	let buttonComplete = document.createElement('button');
 	buttonComplete.className = "btn btn-success w-100";
 	buttonComplete.setAttribute("type", "button");
+	buttonComplete.id = "complete";
 	buttonComplete.innerText = "Complete";
 	let buttonEdit = document.createElement('button');
 	buttonEdit.className = "btn btn-info w-100 my-2";
 	buttonEdit.setAttribute("type", "button");
+	buttonEdit.id = "edit";
 	buttonEdit.innerText = "Edit";
 	let buttonDelete = document.createElement('button');
 	buttonDelete.className = "btn btn-danger w-100";
 	buttonDelete.setAttribute("type", "button");
+	buttonDelete.id = "delete";
 	buttonDelete.innerText = "Delete";	
 
 	dropdownMenuButtonFirst.appendChild(dropdownMenuButtonFirstInner);
@@ -76,16 +79,42 @@ function createNewTask(title, priority, time, task) {
 function addTask() {
 	let timestamp = new Date();
 	let time = timestamp.getHours() + ":" + timestamp.getMinutes() + "   " + timestamp.getDate() + "." + timestamp.getMonth() + "." + timestamp.getFullYear();
-	let priority = (document.getElementById("Low").checked) ? "Low priority": (document.getElementById("Medium").checked) ? "Medium" : "High";
+	let priority = (document.getElementById("Low").checked) ? "Low priority": (document.getElementById("Medium").checked) ? "Medium priority" : "High priority";
 	if (inputTitle.value && inputText.value) {
-			let listItem = createNewTask(inputTitle.value, priority, time, inputText.value)
-			currentTasks.appendChild(listItem);
-			inputTitle.value = "";
-			inputText.value = "";
-			time = "";
+		let listItem = createNewTask(inputTitle.value, priority, time, inputText.value)
+		currentTasks.appendChild(listItem);
+		bindTaskEvents(listItem);
+		inputTitle.value = "";
+		inputText.value = "";
+		time = "";
 	}
 }
 
 addNewTask.onclick = addTask;
 
-console.log(createNewTask("aaa", "High", "11:00", "Do something"));
+function deleteTask() {
+	console.log(1)
+}
+
+function editTask() {
+	console.log(2)
+}
+
+function finishTask() {
+	console.log(3)
+}
+
+function unfinishTask() {
+	console.log(4)
+}
+
+function bindTaskEvents(listItem) {
+
+	let completeTask = listItem.querySelector("button.btn-success");
+	let completeEdit = listItem.querySelector("button.btn-info");
+	let completeDelete = listItem.querySelector("button.btn-danger");
+
+	completeTask.onclick = finishTask;
+	completeEdit.onclick = editTask;
+	completeDelete.onclick = deleteTask;
+}
