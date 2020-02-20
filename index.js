@@ -93,7 +93,9 @@ function addTask() {
 addNewTask.onclick = addTask;
 
 function deleteTask() {
-	console.log(1)
+	let listItem = this.parentNode.parentNode.parentNode;
+	let ul = listItem.parentNode;
+	ul.removeChild(listItem)
 }
 
 function editTask() {
