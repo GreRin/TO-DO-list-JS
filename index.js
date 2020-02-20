@@ -1,9 +1,12 @@
-tasksList = document.getElementById("currentTasks"),
-allTasks = document.getElementById("currentTasks"),
-doneTasks = document.getElementById("doneTasks"),
-addNewTask = document.getElementById("addNewTask");
+let tasksList = document.getElementById("currentTasks");
+let currentTasks = document.getElementById("currentTasks");
+let doneTasks = document.getElementById("doneTasks");
+let addNewTask = document.getElementById("addNewTask");
 
-function createNewTask(task) {
+let inputTitle = document.getElementById("inputTitle");
+let inputText = document.getElementById("inputText");
+
+function createNewTask(title, priority, time, task) {
 	let taskItem = document.createElement('li');
 	taskItem.className = "list-group-item d-flex w-100 mb-2"
 
@@ -13,10 +16,13 @@ function createNewTask(task) {
 	titleWrapper.className = "d-flex w-100 justify-content-between";
 	let taskTitle = document.createElement("h5");
 	taskTitle.className = "mb-1";
+	taskTitle.innerText = title;
 	let wrapperPriority = document.createElement("div");
 	let priorityTitle = document.createElement("small");
 	priorityTitle.className = "mr-2";
+	priorityTitle.innerText = priority;
 	let priorityTime = document.createElement("small");
+	priorityTime.innerText = time;
 	let taskText = document.createElement("p");
 	taskText.className = "mb-1 w-100";
 	taskText.innerText = task;
@@ -40,11 +46,11 @@ function createNewTask(task) {
 	buttonComplete.setAttribute("type", "button");
 	buttonComplete.innerText = "Complete";
 	let buttonEdit = document.createElement('button');
-	buttonEdit.className = "btn btn-success w-100";
+	buttonEdit.className = "btn btn-info w-100 my-2";
 	buttonEdit.setAttribute("type", "button");
 	buttonEdit.innerText = "Edit";
 	let buttonDelete = document.createElement('button');
-	buttonDelete.className = "btn btn-success w-100";
+	buttonDelete.className = "btn btn-danger w-100";
 	buttonDelete.setAttribute("type", "button");
 	buttonDelete.innerText = "Delete";	
 
@@ -66,5 +72,20 @@ function createNewTask(task) {
 
 	return taskItem;
 }
+// Функция добавления нового задания
+function addTask() {
+	let timestamp = new Date();
+	let time = timestamp.getHours() + ":" + timestamp.getMinutes() + "   " + timestamp.getDate() + "." + timestamp.getMonth() + "." + timestamp.getFullYear();
+	let priority = (document.getElementById("Low").checked) ? "Low priority": (document.getElementById("Medium").checked) ? "Medium" : "High";
+	if (inputTitle.value && inputText.value) {
+			let listItem = createNewTask(inputTitle.value, priority, time, inputText.value)
+			currentTasks.appendChild(listItem);
+			inputTitle.value = "";
+			inputText.value = "";
+			time = "";
+	}
+}
 
-console.log(createNewTask());
+addNewTask.onclick = addTask;
+
+console.log(createNewTask("aaa", "High", "11:00", "Do something"));
