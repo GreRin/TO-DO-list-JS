@@ -1,6 +1,7 @@
+/* eslint-disable no-undef */
 /* eslint-disable no-nested-ternary */
 // Функция добавления нового задания
-export default function addTask() {
+export function addTask() {
     const timestamp = new Date();
     let time = `${timestamp.getHours()}:${timestamp.getMinutes()}   ${timestamp.getDate()}.${timestamp.getMonth()}.${timestamp.getFullYear()}`;
     const priority = (document.getElementById('Low').checked) ? 'Low priority' : (document.getElementById('Medium').checked) ? 'Medium priority' : 'High priority';

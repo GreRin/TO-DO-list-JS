@@ -87,7 +87,7 @@ function currentTime() {
 
 function addTask() {
     const timestamp = new Date();
-    let time = `${timestamp.getHours()}:${timestamp.getMinutes()}   ${timestamp.getDate()}.${timestamp.getMonth()}.${timestamp.getFullYear()}`;
+    let time = currentTime();
     const priority = (document.getElementById('Low').checked) ? 'Low priority' : (document.getElementById('Medium').checked) ? 'Medium priority' : 'High priority';
     if (inputTitle.value && inputText.value) {
         const listItem = createNewTask(inputTitle.value, priority, time, inputText.value);
