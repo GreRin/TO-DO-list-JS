@@ -5,9 +5,13 @@ export function finishTask() {
 
     const btnSection = this.parentNode;
     const dropdown = this.parentNode.parentNode;
-    console.log(btnSection);
-    console.log(dropdown);
-    dropdown.removeChild(btnSection);
+    const btnUnfinish = this;
+    btnUnfinish.classList.toggle('uncomplete');
+    btnUnfinish.innerText = 'uncomplete';
+    console.log(btnUnfinish);
+
+    dropdown.innerHTML = '';
+    dropdown.appendChild(btnUnfinish);
 
     const completedItem = document.getElementById('completedTasks');
     completedItem.appendChild(listItem);
