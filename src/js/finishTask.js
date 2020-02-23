@@ -3,10 +3,10 @@ export function finishTask() {
     const ul = listItem.parentNode;
     ul.removeChild(listItem);
 
-    const btnSection = this.parentNode;
     const dropdown = this.parentNode.parentNode;
     const btnUnfinish = this;
     btnUnfinish.classList.toggle('uncomplete');
+    btnUnfinish.id = 'uncomplete';
     btnUnfinish.innerText = 'uncomplete';
     console.log(btnUnfinish);
 
