@@ -1,18 +1,11 @@
 export function finishTask() {
     const listItem = this.parentNode.parentNode.parentNode;
-    const ul = listItem.parentNode;
-    ul.removeChild(listItem);
-
     const dropdown = this.parentNode.parentNode;
-    const btnUnfinish = this;
-    btnUnfinish.classList.toggle('uncomplete');
-    btnUnfinish.id = 'uncomplete';
-    btnUnfinish.innerText = 'uncomplete';
-    console.log(btnUnfinish);
-
-    dropdown.innerHTML = '';
-    dropdown.appendChild(btnUnfinish);
-
+    const ul = listItem.parentNode;
+    listItem.removeChild(dropdown);
+    ul.removeChild(listItem);
+    const contextInput = listItem.firstChild.childNodes[1];
+    contextInput.setAttribute('style', 'text-decoration: line-through');
     const completedItem = document.getElementById('completedTasks');
     completedItem.appendChild(listItem);
 }
