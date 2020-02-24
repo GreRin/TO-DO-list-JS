@@ -1,4 +1,5 @@
 import { saveCompletedTasks } from './saveCompletedTasks';
+import { saveCurrentTasks } from './saveCurrentTasks';
 
 export function finishTask() {
     const listItem = this.parentNode.parentNode.parentNode;
@@ -11,4 +12,7 @@ export function finishTask() {
     const completedItem = document.getElementById('completedTasks');
     completedItem.appendChild(listItem);
     saveCompletedTasks(completedItem);
+
+    const currentTasks = document.getElementById('currentTasks');
+    saveCurrentTasks(currentTasks);
 }
