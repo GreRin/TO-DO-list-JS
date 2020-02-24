@@ -1,3 +1,5 @@
+import { saveCompletedTasks } from './saveCompletedTasks';
+
 export function finishTask() {
     const listItem = this.parentNode.parentNode.parentNode;
     const dropdown = this.parentNode.parentNode;
@@ -8,4 +10,5 @@ export function finishTask() {
     contextInput.setAttribute('style', 'text-decoration: line-through');
     const completedItem = document.getElementById('completedTasks');
     completedItem.appendChild(listItem);
+    saveCompletedTasks(completedItem);
 }

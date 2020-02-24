@@ -18,10 +18,8 @@ export function editTask() {
         }
         contextInput.removeEventListener('keydown', (event), true);
     }, true);
-    const clickHandler = document.getElementsByTagName('body')[0];
-    console.log(clickHandler);
+
     document.addEventListener('click', (event) => {
-        console.log(event.target.tagName);
         if (event.target.tagName !== 'INPUT') {
             const text = contextInput.value;
             context.classList.remove('hidden');

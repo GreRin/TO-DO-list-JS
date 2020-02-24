@@ -2,6 +2,7 @@
 import { currentTime } from './timeFunc';
 import { createNewTask } from './createNewTask';
 import { bindTaskEvents } from './bindTaskEvents';
+import { saveCurrentTasks } from './saveCurrentTasks';
 
 const currentTasks = document.getElementById('currentTasks');
 const inputTitle = document.getElementById('inputTitle');
@@ -17,5 +18,6 @@ export function addTask() {
         inputTitle.value = '';
         inputText.value = '';
         time = '';
+        saveCurrentTasks(currentTasks);
     }
 }
