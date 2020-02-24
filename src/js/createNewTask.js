@@ -18,6 +18,11 @@ export function createNewTask(title, priority, time, task) {
     const taskText = document.createElement('p');
     taskText.className = 'mb-1 w-100';
     taskText.innerText = task;
+    const taskInputText = document.createElement('input');
+    taskInputText.className = 'form-control';
+    taskInputText.setAttribute('placeholder', task);
+    taskInputText.classList.toggle('hidden');
+    taskInputText.id = 'inputText';
 
     const dropdownMenu = document.createElement('div');
     dropdownMenu.className = 'dropdown m-2 dropleft';
@@ -61,6 +66,7 @@ export function createNewTask(title, priority, time, task) {
     titleWrapper.appendChild(wrapperPriority);
     wrapper.appendChild(titleWrapper);
     wrapper.appendChild(taskText);
+    wrapper.appendChild(taskInputText);
 
     taskItem.appendChild(wrapper);
     taskItem.appendChild(dropdownMenu);
