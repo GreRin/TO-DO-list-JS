@@ -1,3 +1,5 @@
+import { randomID } from './randomID';
+
 export function createNewTask(title, priority, time, task) {
     const taskItem = document.createElement('li');
     taskItem.className = 'list-group-item d-flex w-100 mb-2';

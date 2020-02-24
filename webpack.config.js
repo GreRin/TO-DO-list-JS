@@ -6,7 +6,6 @@ const argv = require('yargs').argv;
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const CopyPlugin = require('copy-webpack-plugin');
 
 const isDevelopment = argv.mode === 'development';
 const isProduction = !isDevelopment;
@@ -113,8 +112,7 @@ const config = {
                 filename: path.basename(htmlFile),
                 template: htmlFile,
             });
-        }),
-        new CopyPlugin([{ from: './src/favicon.ico', to: './favicon.ico' }]),
+				}),
     ],
     optimization: isProduction
         ? {

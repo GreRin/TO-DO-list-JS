@@ -16,16 +16,18 @@ export function editTask() {
             context.innerText = text;
             context.classList.remove('hidden');
         }
-    });
-    // const clickHandler = document.getElementsByTagName('body')[0];
-    // console.log(clickHandler);
-    // clickHandler.addEventListener('click', (event) => {
-    //     console.log(event.target.tagName);
-    //     if (event.tagName !== 'INPUT') {
-    //         const text = contextInput.value;
-    //         contextInput.classList.add('hidden');
-    //         context.innerText = text;
-    //         context.classList.remove('hidden');
-    //     }
-    // });
+        contextInput.removeEventListener('keydown', (event), true);
+    }, true);
+    const clickHandler = document.getElementsByTagName('body')[0];
+    console.log(clickHandler);
+    document.addEventListener('click', (event) => {
+        console.log(event.target.tagName);
+        if (event.target.tagName !== 'INPUT') {
+            const text = contextInput.value;
+            context.classList.remove('hidden');
+            context.textContent = text;
+            contextInput.classList.add('hidden');
+        }
+        document.removeEventListener('click', (event), true);
+    }, true);
 }
