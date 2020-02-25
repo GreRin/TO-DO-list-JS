@@ -1,5 +1,7 @@
 import { createNewTask } from './createNewTask';
+import { completedTaskLoader } from './completedTaskLoader';
 import { bindTaskEvents } from './bindTaskEvents';
+import { bindCompletedTaskEvents } from './bindCompletedTaskEvents';
 
 export function tasksLoader() {
     const data = JSON.parse(localStorage.getItem('current'));
@@ -21,8 +23,8 @@ export function tasksLoader() {
         const task = completedData.completedTasksArr[i];
         const priority = completedData.completedPriority[i];
         const time = completedData.completedData[i];
-        const completedItem = createNewTask(title, priority, time, task);
+        const completedItem = completedTaskLoader(title, priority, time, task);
         completedTasks.appendChild(completedItem);
-        bindTaskEvents(completedItem);
+        bindCompletedTaskEvents(completedItem);
     }
 }

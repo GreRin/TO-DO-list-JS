@@ -1,8 +1,9 @@
 import { saveCompletedTasks } from './saveCompletedTasks';
 
-export function deleteTask() {
-    const listItem = this.parentNode.parentNode.parentNode;
-    const ul = listItem.parentNode;
+export function deleteCompletedTask() {
+    const listItem = this.parentNode.parentNode;
+    const ul = this.parentNode.parentNode.parentNode;
+    console.log(listItem);
     ul.removeChild(listItem);
 
     const completedItem = document.getElementById('completedItem');

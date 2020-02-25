@@ -1,4 +1,4 @@
-export function createNewTask(title, priority, time, task) {
+export function completedTaskLoader(title, priority, time, task) {
     const taskItem = document.createElement('li');
     taskItem.className = 'list-group-item d-flex w-100 mb-2';
 
@@ -26,40 +26,16 @@ export function createNewTask(title, priority, time, task) {
 
     const dropdownMenu = document.createElement('div');
     dropdownMenu.className = 'dropdown m-2 dropleft';
-    const dropdownMenuButtonFirst = document.createElement('button');
-    dropdownMenuButtonFirst.className = 'btn btn-secondary h-100';
-    dropdownMenuButtonFirst.type = 'button';
-    dropdownMenuButtonFirst.id = 'dropdownMenuItem1';
-    dropdownMenuButtonFirst.setAttribute('data-toggle', 'dropdown');
-    dropdownMenuButtonFirst.setAttribute('aria-haspopup', 'true');
-    dropdownMenuButtonFirst.setAttribute('aria-expanded', 'false');
-    const dropdownMenuButtonFirstInner = document.createElement('i');
-    dropdownMenuButtonFirstInner.className = 'fas fa-ellipsis-v';
-    const dropdownMenuSecond = document.createElement('div');
-    dropdownMenuSecond.className = 'dropdown-menu p-2 flex-column';
-    dropdownMenuSecond.setAttribute('aria-labelledby', 'dropdownMenuItem1');
-    const buttonComplete = document.createElement('button');
-    buttonComplete.className = 'btn btn-success w-100 complete';
-    buttonComplete.setAttribute('type', 'button');
-    buttonComplete.id = 'complete';
-    buttonComplete.innerText = 'Complete';
-    const buttonEdit = document.createElement('button');
-    buttonEdit.className = 'btn btn-info w-100 my-2 edit';
-    buttonEdit.setAttribute('type', 'button');
-    buttonEdit.id = 'edit';
-    buttonEdit.innerText = 'Edit';
+
+
     const buttonDelete = document.createElement('button');
     buttonDelete.className = 'btn btn-danger w-100 delete';
     buttonDelete.setAttribute('type', 'button');
     buttonDelete.id = 'delete';
     buttonDelete.innerText = 'Delete';
 
-    dropdownMenuButtonFirst.appendChild(dropdownMenuButtonFirstInner);
-    dropdownMenuSecond.appendChild(buttonComplete);
-    dropdownMenuSecond.appendChild(buttonEdit);
-    dropdownMenuSecond.appendChild(buttonDelete);
-    dropdownMenu.appendChild(dropdownMenuButtonFirst);
-    dropdownMenu.appendChild(dropdownMenuSecond);
+    dropdownMenu.appendChild(buttonDelete);
+
     wrapperPriority.appendChild(priorityTitle);
     wrapperPriority.appendChild(priorityTime);
     titleWrapper.appendChild(taskTitle);
