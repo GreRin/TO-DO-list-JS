@@ -3,7 +3,6 @@ export function saveCurrentTasks(currentTasks) {
     const currentTasksArr = [];
     const currentPriority = [];
     const currentData = [];
-    console.log(currentTasks);
 
     for (let i = 0; i < currentTasks.children.length; i++) {
         currentTasksArr.push(currentTasks.children[i].getElementsByTagName('p')[0].innerText);

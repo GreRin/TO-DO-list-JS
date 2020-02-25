@@ -1,11 +1,11 @@
 /* eslint-disable no-nested-ternary */
 import { addTask } from './js/addTask';
-import { loadTasks } from './js/loadTasks';
+import { tasksLoader } from './js/tasksLoader';
 
 function renderPage() {
+    tasksLoader();
     const addNewTask = document.getElementById('addNewTask');
     addNewTask.onclick = addTask;
 }
 
 renderPage();
-loadTasks();
