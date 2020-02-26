@@ -6,7 +6,7 @@
 - сохранение задач с использованием localStorage
 
 
-Application is available [here](https://5e56d46e1cd003f5212e2541--sad-bhaskara-7fe8f8.netlify.com/)
+Application is available [here](https://5e56d76e8049b92c4aa75bb9--brave-spence-1a2e0e.netlify.com/)
 
 
 ### Install
