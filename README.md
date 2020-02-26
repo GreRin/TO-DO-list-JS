@@ -6,7 +6,7 @@
 - сохранение задач с использованием localStorage
 
 
-Application is available [here](https://clever-kilby-1a1bec.netlify.com/)
+Application is available [here]()
 
 
 ### Install
