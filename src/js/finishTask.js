@@ -17,7 +17,7 @@ export function finishTask() {
     buttonDelete.setAttribute('type', 'button');
     buttonDelete.id = 'delete';
     buttonDelete.innerText = 'Delete';
-    dropdown.appendChild(buttonDelete);
+    // dropdown.appendChild(buttonDelete);
 
     const completedItem = document.getElementById('completedTasks');
     completedItem.appendChild(listItem);
