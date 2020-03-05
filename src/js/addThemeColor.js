@@ -1,7 +1,7 @@
 import Picker from 'vanilla-picker';
 
 export function addThemeColor() {
-    const btn = document.getElementById('parent');
+    const btn = document.querySelector('#parent');
     btn.addEventListener('click', (event) => {
 
         const parent = document.getElementById('bg-color');
