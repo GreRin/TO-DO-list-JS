@@ -8,6 +8,9 @@ export function deleteCompletedTask() {
     ul.removeChild(listItem);
 
     const completedItem = document.getElementById('completedTasks');
-    console.log(completedItem);
     saveCompletedTasks(completedItem);
+
+    const countCompleted = document.getElementById('countCompleted');
+    const count = Number(countCompleted.innerHTML.slice(1, -1)) - 1;
+    countCompleted.innerHTML = `(${count})`;
 }

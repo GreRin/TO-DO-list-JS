@@ -5,6 +5,9 @@ import { bindCompletedTaskEvents } from './bindCompletedTaskEvents';
 
 export function tasksLoader() {
     const data = JSON.parse(localStorage.getItem('current'));
+    const countToDo = document.getElementById('countToDo');
+    countToDo.innerText = `(${data.currentTasksTitleArr.length})`;
+
     const currentTasks = document.getElementById('currentTasks');
     for (let i = 0; i < data.currentTasksTitleArr.length; i++) {
         const title = data.currentTasksTitleArr[i];
@@ -17,6 +20,9 @@ export function tasksLoader() {
     }
 
     const completedData = JSON.parse(localStorage.getItem('completed'));
+    const countCompleted = document.getElementById('countCompleted');
+    countCompleted.innerText = `(${completedData.completedTasksTitleArr.length})`;
+
     const completedTasks = document.getElementById('completedTasks');
     for (let i = 0; i < completedData.completedTasksTitleArr.length; i++) {
         const title = completedData.completedTasksTitleArr[i];

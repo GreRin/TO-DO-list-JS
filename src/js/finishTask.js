@@ -24,4 +24,12 @@ export function finishTask() {
 
     const currentTasks = document.getElementById('currentTasks');
     saveCurrentTasks(currentTasks);
+
+    const countToDo = document.getElementById('countToDo');
+    const count = Number(countToDo.innerHTML.slice(1, -1)) - 1;
+    countToDo.innerHTML = `(${count})`;
+
+    const countCompleted = document.getElementById('countCompleted');
+    const countSize = Number(countCompleted.innerHTML.slice(1, -1)) + 1;
+    countCompleted.innerHTML = `(${countSize})`;
 }

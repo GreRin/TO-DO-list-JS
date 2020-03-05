@@ -1,7 +1,5 @@
 import { createNewTask } from './createNewTask';
-// import { completedTaskLoader } from './completedTaskLoader';
 import { bindTaskEvents } from './bindTaskEvents';
-// import { bindCompletedTaskEvents } from './bindCompletedTaskEvents';
 
 export function sort() {
     const data = JSON.parse(localStorage.getItem('current'));

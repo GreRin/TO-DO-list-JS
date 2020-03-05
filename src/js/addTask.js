@@ -3,6 +3,7 @@ import { currentTime } from './timeFunc';
 import { createNewTask } from './createNewTask';
 import { bindTaskEvents } from './bindTaskEvents';
 import { saveCurrentTasks } from './saveCurrentTasks';
+import { tasksLoader } from './tasksLoader';
 
 const currentTasks = document.getElementById('currentTasks');
 const inputTitle = document.getElementById('inputTitle');
@@ -20,4 +21,10 @@ export function addTask() {
         time = '';
         saveCurrentTasks(currentTasks);
     }
+
+    const countToDo = document.getElementById('countToDo');
+    console.log(countToDo.innerHTML);
+    const count = Number(countToDo.innerHTML.slice(1, -1)) + 1;
+    countToDo.innerHTML = `(${count})`;
+
 }
