@@ -1,6 +1,8 @@
-export function createNewTask(title, priority, time, task) {
+export function createNewTask(title, priority, time, task, color) {
     const taskItem = document.createElement('li');
     taskItem.className = 'list-group-item d-flex w-100 mb-2';
+    taskItem.style.background = '#aaa';
+    console.log(color);
 
     const wrapper = document.createElement('div');
     wrapper.className = 'w-100 mr-2';
