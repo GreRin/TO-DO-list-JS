@@ -1,5 +1,4 @@
 function pickerTheme(event) {
-    const colorTheme = '#f6f8f8ff';
     const colorThemeArr = [];
     const theme = document.getElementById('bg-color');
     console.log(event.target.innerText);
