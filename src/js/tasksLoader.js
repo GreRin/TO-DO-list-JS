@@ -34,7 +34,8 @@ export function tasksLoader() {
         const task = completedData.completedTasksArr[i];
         const priority = completedData.completedPriority[i];
         const time = completedData.completedData[i];
-        const completedItem = completedTaskLoader(title, priority, time, task);
+        const color = completedData.completedColor[i];
+        const completedItem = completedTaskLoader(title, priority, time, task, color);
         completedTasks.appendChild(completedItem);
         bindCompletedTaskEvents(completedItem);
     }
