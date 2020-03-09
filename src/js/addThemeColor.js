@@ -1,23 +1,18 @@
-import Picker from 'vanilla-picker';
-
-export function addThemeColor() {
+function pickerTheme(event) {
     const colorTheme = '#f6f8f8ff';
     const colorThemeArr = [];
-    const btnX = document.querySelector('#parent');
     const theme = document.getElementById('bg-color');
-    btnX.addEventListener('click', (event) => {
-        console.log(event.target.innerText);
-        if (event.target.innerText === 'Theme color') {
-            const pickerTheme = new Picker(theme);
-            pickerTheme.onChange = function (color) {
-                const colorThemePicker = color.rgbaString;
-                theme.style.backgroundColor = colorThemePicker;
-                colorThemeArr.push(colorTheme);
-                localStorage.setItem('colorTheme', JSON.stringify({
-                    colorThemePicker,
-                }));
-            };
-        }
-        btnX.removeEventListener('click', (event), true);
-    }, true);
+    console.log(event.target.innerText);
+    const colorThemePicker = document.getElementById('parent').value;
+    console.log(colorThemePicker);
+    theme.style.backgroundColor = colorThemePicker;
+    colorThemeArr.push(colorThemePicker);
+    localStorage.setItem('colorTheme', JSON.stringify({
+        colorThemePicker,
+    }));
+}
+
+export function addThemeColor() {
+    const btnX = document.getElementById('parent');
+    btnX.addEventListener('change', pickerTheme);
 }

@@ -22,6 +22,17 @@
 				right: 0 !important;
 				transform: translateX(-265px);
 			}
+			#parent {
+				width: 40px;
+				height: 40px;
+				padding: 0;
+			}
+			.parent {
+				padding: 0;
+			}
+			.dropdownMenu {
+				width: 100%;
+			}
 		</style>
 	</head>
 	<body>
@@ -42,17 +53,11 @@
 							<i class="fas fa-cog"></i>
 						</button>
 						<div class="dropdown-menu p-2 dropdown-menu-right" aria-labelledby="dropdownMenuSettings">
-							<button type="button" id="parent" class="btn btn-outline-primary btn-sm">Theme color</button>
+								<input type="color" id="parent" class="btn btn-outline-primary btn-sm">
 						</div>
 					</div>
 				</div>
 			</nav>
-			<!-- <div class="card bg-color">
-				<div class="card-body text-center d-flex justify-content-center align-items-center flex-column">
-					<p>My background color will be changed</p>
-					<button id="parent" class="btn btn-outline-primary btn-sm">Color Picker</button>
-				</div>
-			</div> -->
 			<div class="row justify-content-center" id="allTasks">
 				<div class="col-10">
 					<h3 class="my-2">ToDo <p id="countToDo" style="display: inline-block">0</p></h3>

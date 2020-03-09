@@ -3,6 +3,7 @@ import { addTask } from './js/addTask';
 import { tasksLoader } from './js/tasksLoader';
 import { sort } from './js/sortFunc';
 import { addThemeColor } from './js/addThemeColor';
+import { addTaskColor } from './js/addTaskColor';
 
 if (localStorage.getItem('current') || localStorage.getItem('completed')) {
     tasksLoader();
@@ -16,3 +17,4 @@ function renderPage() {
 renderPage();
 sort();
 addThemeColor();
+addTaskColor();
