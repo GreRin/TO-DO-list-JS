@@ -4,6 +4,11 @@ import { bindTaskEvents } from './bindTaskEvents';
 import { bindCompletedTaskEvents } from './bindCompletedTaskEvents';
 
 export function tasksLoader() {
+    const colorData = JSON.parse(localStorage.getItem('colorTheme'));
+    const colorTheme = document.getElementById('bg-color');
+    console.log(colorData.colorThemePicker);
+    colorTheme.style.backgroundColor = colorData.colorThemePicker;
+
     const data = JSON.parse(localStorage.getItem('current'));
     const countToDo = document.getElementById('countToDo');
     countToDo.innerText = `(${data.currentTasksTitleArr.length})`;
