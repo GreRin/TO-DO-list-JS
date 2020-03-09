@@ -3,7 +3,6 @@ import { currentTime } from './timeFunc';
 import { createNewTask } from './createNewTask';
 import { bindTaskEvents } from './bindTaskEvents';
 import { saveCurrentTasks } from './saveCurrentTasks';
-import { taskColor } from './taskColor';
 
 const currentTasks = document.getElementById('currentTasks');
 const inputTitle = document.getElementById('inputTitle');
@@ -11,7 +10,7 @@ const inputText = document.getElementById('inputText');
 
 export function addTask() {
     let time = currentTime();
-    const color = taskColor();
+    let color = `#${Math.floor(Math.random() * 16777215).toString(16)}`;
     const priority = (document.getElementById('Low').checked) ? 'Low priority' : (document.getElementById('Medium').checked) ? 'Medium priority' : 'High priority';
     if (inputTitle.value && inputText.value) {
         const listItem = createNewTask(inputTitle.value, priority, time, inputText.value, color);
@@ -20,6 +19,7 @@ export function addTask() {
         inputTitle.value = '';
         inputText.value = '';
         time = '';
+        color = '';
         saveCurrentTasks(currentTasks);
     }
 

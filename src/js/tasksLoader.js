@@ -19,6 +19,7 @@ export function tasksLoader() {
         const task = data.currentTasksArr[i];
         const priority = data.currentPriority[i];
         const time = data.currentData[i];
+        // const color = data;
         const listItem = createNewTask(title, priority, time, task);
         currentTasks.appendChild(listItem);
         bindTaskEvents(listItem);
