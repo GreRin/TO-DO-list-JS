@@ -1,7 +1,8 @@
+
 export function createNewTask(title, priority, time, task, color) {
+    const randomID = Math.floor(Math.random() * 16777215).toString(16);
     const taskItem = document.createElement('li');
     taskItem.className = 'list-group-item d-flex w-100 mb-2';
-
     taskItem.style.background = color;
 
     const wrapper = document.createElement('div');
@@ -24,7 +25,7 @@ export function createNewTask(title, priority, time, task, color) {
     taskInputText.className = 'form-control';
     taskInputText.setAttribute('placeholder', task);
     taskInputText.classList.toggle('hidden');
-    taskInputText.id = 'inputText';
+    taskInputText.id = `inputText ${randomID}`;
 
     const dropdownMenu = document.createElement('div');
     dropdownMenu.className = 'dropdown m-2 dropleft';

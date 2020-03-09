@@ -24,7 +24,6 @@ export function addTask() {
     }
 
     const countToDo = document.getElementById('countToDo');
-    console.log(countToDo.innerHTML);
     const count = Number(countToDo.innerHTML.slice(1, -1)) + 1;
     countToDo.innerHTML = `(${count})`;
 

@@ -4,7 +4,7 @@ export function saveCurrentTasks(currentTasks) {
     const currentPriority = [];
     const currentData = [];
     const currentColor = [];
-    console.log(currentTasks);
+
     if (currentTasks !== null) {
         for (let i = 0; i < currentTasks.children.length; i++) {
             currentTasksArr.push(currentTasks.children[i].getElementsByTagName('p')[0].innerText);
