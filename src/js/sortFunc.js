@@ -19,7 +19,8 @@ export function sort() {
             const task = data.currentTasksArr[i];
             const priority = data.currentPriority[i];
             const time = data.currentData[i];
-            const listItem = createNewTask(title, priority, time, task);
+            const color = data.currentColor[i];
+            const listItem = createNewTask(title, priority, time, task, color);
             currentTasks.appendChild(listItem);
             bindTaskEvents(listItem);
         }
@@ -42,7 +43,8 @@ export function sort() {
             const task = data.currentTasksArr[i];
             const priority = data.currentPriority[i];
             const time = data.currentData[i];
-            const listItem = createNewTask(title, priority, time, task);
+            const color = data.currentColor[i];
+            const listItem = createNewTask(title, priority, time, task, color);
             currentTasks.appendChild(listItem);
             bindTaskEvents(listItem);
         }
