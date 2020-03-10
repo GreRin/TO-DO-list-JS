@@ -1,7 +1,8 @@
 function pickerTheme() {
+    let colorThemePicker = '#f6f8f8ff';
     const colorThemeArr = [];
     const theme = document.getElementById('bg-color');
-    const colorThemePicker = document.getElementById('parent').value;
+    colorThemePicker = document.getElementById('parent').value;
     theme.style.backgroundColor = colorThemePicker;
     colorThemeArr.push(colorThemePicker);
     localStorage.setItem('colorTheme', JSON.stringify({
