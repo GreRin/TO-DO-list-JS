@@ -5,7 +5,7 @@ export function sort() {
     const data = JSON.parse(localStorage.getItem('current'));
     // Sort tasks decrease
     const sortTasksDecrease = document.getElementById('decrease');
-    sortTasksDecrease.addEventListener('click', (event) => {
+    sortTasksDecrease.addEventListener('click', () => {
         const currentTasks = document.getElementById('currentTasks');
         let child = currentTasks.lastElementChild;
 
@@ -24,9 +24,7 @@ export function sort() {
             currentTasks.appendChild(listItem);
             bindTaskEvents(listItem);
         }
-
-        sortTasksDecrease.removeEventListener('click', (event), true);
-    }, true);
+    });
     // Sort tasks increase
     const sortTasksIncrease = document.getElementById('increase');
     sortTasksIncrease.addEventListener('click', (event) => {
@@ -48,7 +46,5 @@ export function sort() {
             currentTasks.appendChild(listItem);
             bindTaskEvents(listItem);
         }
-
-        sortTasksIncrease.removeEventListener('click', (event), true);
-    }, true);
+    });
 }
