@@ -7,12 +7,19 @@ export function sort() {
     const sortTasksDecrease = document.getElementById('decrease');
     sortTasksDecrease.addEventListener('click', () => {
         const currentTasks = document.getElementById('currentTasks');
+
         let child = currentTasks.lastElementChild;
+        for (let i = 0; i < currentTasks.length; i++) {
+            const a = currentTasks.firstElementChild;
+            currentTasks.appendChild(a);
+            currentTasks.remove(a);
+        }
 
         while (child) {
             currentTasks.removeChild(child);
             child = currentTasks.lastElementChild;
         }
+
 
         for (let i = data.currentTasksTitleArr.length - 1; i + 1 > 0; i--) {
             const title = data.currentTasksTitleArr[i];
@@ -27,7 +34,7 @@ export function sort() {
     });
     // Sort tasks increase
     const sortTasksIncrease = document.getElementById('increase');
-    sortTasksIncrease.addEventListener('click', (event) => {
+    sortTasksIncrease.addEventListener('click', () => {
         const currentTasks = document.getElementById('currentTasks');
         let child = currentTasks.lastElementChild;
 
