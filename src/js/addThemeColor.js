@@ -1,18 +1,19 @@
 export function addThemeColor() {
-    const colorTheme = '#f6f8f8ff';
-    localStorage.setItem('colorTheme', JSON.stringify({
-        colorTheme,
-    }));
-    const btnX = document.getElementById('parent');
-    btnX.addEventListener('change', themeColorPicker);
-}
+    let colorThemePicker;
 
-function themeColorPicker(e) {
-    const theme = document.getElementById('bg-color');
-    console.log(e.target.value);
-    const colorThemePicker = e.target.value;
-    theme.style.backgroundColor = colorThemePicker;
-    localStorage.setItem('colorTheme', JSON.stringify({
-        colorThemePicker,
-    }));
+    if (localStorage.getItem('colorTheme')) {
+        const colorData = JSON.parse(localStorage.getItem('colorTheme'));
+        const colorTheme = document.getElementById('bg-color');
+        colorTheme.style.backgroundColor = colorData.colorThemePicker;
+    } else { colorThemePicker = '#f6f8f8ff'; }
+
+    const btnX = document.getElementById('parent');
+    btnX.addEventListener('change', (e) => {
+        const theme = document.getElementById('bg-color');
+        colorThemePicker = e.target.value;
+        theme.style.backgroundColor = colorThemePicker;
+        localStorage.setItem('colorTheme', JSON.stringify({
+            colorThemePicker,
+        }));
+    });
 }

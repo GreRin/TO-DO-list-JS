@@ -2,10 +2,6 @@ import { createNewTask } from './createNewTask';
 import { bindTaskEvents } from './bindTaskEvents';
 
 export function tasksLoader() {
-    const colorData = JSON.parse(localStorage.getItem('colorTheme'));
-    const colorTheme = document.getElementById('bg-color');
-    colorTheme.style.backgroundColor = colorData.colorThemePicker;
-
     const data = JSON.parse(localStorage.getItem('current'));
     const countToDo = document.getElementById('countToDo');
     countToDo.innerText = `(${data.currentTasksTitleArr.length})`;
